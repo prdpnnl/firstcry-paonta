@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>FirstCry Paonta Sahib - Store Information</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255,255,255,0.92);
+      --surface-strong: #ffffff;
+      --text: #111111;
+      --muted: #6e6e73;
+      --line: rgba(17,17,17,0.08);
+      --line-strong: rgba(17,17,17,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --accent: #1a73e8;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(26,115,232,0.07), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(245,130,32,0.06), transparent 30%),
+        var(--bg);
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+    }
+
+    .card {
+      width: min(100%, 430px);
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .brand {
+      padding: 28px 24px 18px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand img {
+      width: 230px;
+      max-width: 78%;
+      height: auto;
+      display: inline-block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(17,17,17,0.04);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #34a853;
+      box-shadow: 0 0 0 4px rgba(52,168,83,0.12);
+    }
+
+    h1 {
+      margin: 16px 0 6px;
+      font-size: 27px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .sub {
+      margin: 0 auto;
+      max-width: 300px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 20px 18px 10px;
+    }
+
+    .actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: var(--text);
+      background: var(--surface-strong);
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      min-height: 72px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.07);
+      background: #ffffff;
+    }
+
+    .btn:active { transform: scale(0.99); }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: rgba(17,17,17,0.05);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 44px;
+      color: var(--text);
+    }
+
+    .icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .btn-copy {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .btn-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .btn-sub {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chevron {
+      color: #9aa0a6;
+      font-size: 22px;
+      line-height: 1;
+      margin-left: auto;
+      padding-left: 6px;
+      flex: 0 0 auto;
+    }
+
+    .info {
+      margin: 10px 18px 22px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+    }
+
+    .store-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(26,115,232,0.08);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .store-name {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .address {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 0 18px 22px;
+      text-align: center;
+      color: #8a8a8a;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 380px) {
+      h1 { font-size: 24px; }
+      .btn-title { font-size: 15px; }
+      .btn-sub { font-size: 12px; }
+      .card { border-radius: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="FirstCry Paonta Sahib store information">
+      <div class="brand">
+        <img src="logo_firstcry.png" alt="FirstCry logo" />
+        <div class="eyebrow"><span class="dot"></span>Paonta Sahib Store</div>
+        <h1>Connect with the store</h1>
+        <p class="sub">Choose how you would like to contact or visit the Paonta Sahib location.</p>
+      </div>
+
+      <div class="section">
+        <div class="actions">
+          <a class="btn" href="tel:+916230598245" aria-label="Call store at +91 62305 98245">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.45-1.28a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="btn-copy">
+              <span class="btn-title">Call Store</span>
+              <span class="btn-sub">+91 62305 98245</span>
+            </span>
+            <span class="chevron">›</span>
+          </a>
+
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=30.442013%2C77.610734" target="_blank" rel="noopener" aria-label="Open store location in Google Maps">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="btn-copy">
+              <span class="btn-title">Open Location</span>
+              <span class="btn-sub">30.442013, 77.610734</span>
+            </span>
+            <span class="chevron">›</span>
+          </a>
+
+          <a class="btn" href="https://www.instagram.com/firstcrypaontasahib/" target="_blank" rel="noopener" aria-label="Open Instagram profile firstcrypaontasahib">
+            <span class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37a4 4 0 1 1-2.95-2.95"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </span>
+            <span class="btn-copy">
+              <span class="btn-title">Instagram</span>
+              <span class="btn-sub">@firstcrypaontasahib</span>
+            </span>
+            <span class="chevron">›</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="info">
+        <span class="store-label">Store Details</span>
+        <p class="store-name">Arya Enterprises</p>
+        <p class="address">Shamsherpur, Paonta Sahib,<br>Himachal Pradesh - 173025</p>
+      </div>
+
+      <div class="footer">FirstCry Paonta Sahib • Store information page</div>
+    </section>
+  </main>
+</body>
+</html>
